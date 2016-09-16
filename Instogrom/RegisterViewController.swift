@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func toLoginTapped() {
-        self.navigationController?.popViewController(animated: true)
+       _ = self.navigationController?.popToRootViewController(animated: true)
     }
 
 
@@ -35,17 +35,19 @@ class RegisterViewController: UIViewController {
         if let email = emailField.text, let password = passwordField.text, let confirmPassword = confirmPasswordField.text {
             let auth = Auth(id: email, password: password, confirmPassword: confirmPassword)
 
-            do {
-                try auth.registerAccount()
-                //TODO: change page
-            } catch RegisterError.passwordsNotMatch {
-                print("dont match pw")
-            }
-            catch RegisterError.duplicatedId{
-                
-            } catch {
-                fatalError("fatalError")
-            }
+            auth.runFIRCreateUser(completion: { (result) in
+                switch result {
+
+                case .Success(let user):
+                    print("\(user)")
+                case .Failed(let msg):
+                    let alertController = UIAlertController(title: "帳號建立失敗", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "確定", style: UIAlertActionStyle.cancel, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                case .PasswordsNotMatch:
+                    print("PasswordsNotMatch")
+                }
+            })
 
         }
         

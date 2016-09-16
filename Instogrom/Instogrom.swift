@@ -9,10 +9,11 @@
 import Foundation
 import Firebase
 
-//Error Type
-enum RegisterError: Error {
-    case passwordsNotMatch
-    case duplicatedId
+//Auth Status & Error
+enum CreateUserStatus<T> {
+    case PasswordsNotMatch
+    case Failed(String)
+    case Success(T)
 }
 
 //Helper Class
@@ -28,38 +29,28 @@ class Auth {
         self.confirmPassword = confirmPassword
     }
 
-    func runFIRCreateUser(complete: @escaping (FIRUser?, Error?) -> Void) {
+    func runFIRCreateUser(completion: @escaping (CreateUserStatus<FIRUser>) -> ())  {
+        guard self.password == self.confirmPassword else {
+            return completion(.PasswordsNotMatch)
+        }
+
         FIRAuth.auth()?.createUser(withEmail: id, password: password, completion: { (user, error) in
-            if let error = error {
-                print("\(error)")
-                //在這邊想判斷error的類型並throw自定的enum RegisterError該怎麼寫
-                complete(nil, error)
+            if let error = error{
+               completion(.Failed(error.localizedDescription))
+
             } else {
-                complete(user, nil)
+                completion(.Success(user!))
             }
         })
     }
 
-    func registerAccount() throws {
-        guard password == confirmPassword else {
-            throw RegisterError.passwordsNotMatch
-        }
-        runFIRCreateUser { (user, error) in
-            guard error != nil {
-                throw RegisterError.duplicatedId
-            } else {
-
-            }
-        }
-
-//        func runAuth  //FIRUser?  Error?
 
 
 
-        func createUser() {
-            runFIRCreateUser(complete: <#T##(FIRUser?, Error?) -> Void#>)
-        }
+
+
+
     }
 
 
-}
+
