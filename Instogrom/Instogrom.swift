@@ -9,10 +9,11 @@
 import Foundation
 import Firebase
 
-//Error Type
-enum RegisterError: Error {
-    case passwordsNotMatch
-    case duplicatedId
+//Auth Status & Error
+enum CreateUserStatus<T> {
+    case PasswordsNotMatch
+    case Failed(String)
+    case Success(T)
 }
 
 //Helper Class
