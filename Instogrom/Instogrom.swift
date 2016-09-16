@@ -46,7 +46,9 @@ class Auth {
         }
         runFIRCreateUser { (user, error) in
             guard error != nil {
-                throw RegisterError.
+                throw RegisterError.duplicatedId
+            } else {
+
             }
         }
 
