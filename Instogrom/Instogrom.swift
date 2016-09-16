@@ -29,20 +29,21 @@ class Auth {
         self.confirmPassword = confirmPassword
     }
 
-    func registerAccount() throws {
-        guard password == confirmPassword else {
-            throw RegisterError.passwordsNotMatch
+    func runFIRCreateUser(completion: @escaping (CreateUserStatus<FIRUser>) -> ())  {
+        guard self.password == self.confirmPassword else {
+            return completion(.PasswordsNotMatch)
         }
+
         FIRAuth.auth()?.createUser(withEmail: id, password: password, completion: { (user, error) in
-            if let error = error {
-                print("\(error)")
-                //在這邊想判斷error的類型並throw自定的enum RegisterError該怎麼寫
+            if let error = error{
+               completion(.Failed(error.localizedDescription))
 
             } else {
-                print("Reg completed")
+                completion(.Success(user!))
             }
         })
     }
-    
-    
 }
+
+
+
