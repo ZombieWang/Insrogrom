@@ -35,7 +35,8 @@ class Auth {
         }
 
         FIRAuth.auth()?.createUser(withEmail: id, password: password, completion: { (user, error) in
-            if let error = error{
+            if let error = error as? NSError{
+                //TODO: 處理error
                completion(.Failed(error.localizedDescription))
 
             } else {
