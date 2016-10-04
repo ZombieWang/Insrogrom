@@ -8,7 +8,7 @@ target 'Instogrom' do
   use_frameworks!
 
   # Pods for Instogrom
-pod 'Firebase'
+pod 'Firebase' 
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
