@@ -11,7 +11,5 @@ target 'Instogrom' do
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
-pod 'FirebaseUI'
-pod 'SDWebImage'
-pod 'SVProgressHUD'
+pod 'Firebase/Storage'
 end

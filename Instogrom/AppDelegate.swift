@@ -19,6 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
         -> Bool {
             FIRApp.configure()
+
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+            FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+                if let user = user {
+                    print("目前使用者：\(user.email)")
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainFlow")
+                } else {
+                    print("Nobody logs in.")
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginFlow")
+                }
+            })
             return true
     }
 

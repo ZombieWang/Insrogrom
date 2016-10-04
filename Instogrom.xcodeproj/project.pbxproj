@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5F2BC0361D840B48007F442C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2BC0351D840B48007F442C /* RegisterViewController.swift */; };
-		5F7FFB1E1D7C006000D0B089 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FFB1D1D7C006000D0B089 /* SignUpViewController.swift */; };
+		5F7FFB1E1D7C006000D0B089 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FFB1D1D7C006000D0B089 /* SignInViewController.swift */; };
 		5F9884591D7BF73F0041336F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9884581D7BF73F0041336F /* AppDelegate.swift */; };
 		5F98845E1D7BF73F0041336F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F98845C1D7BF73F0041336F /* Main.storyboard */; };
 		5F9884601D7BF73F0041336F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F98845F1D7BF73F0041336F /* Assets.xcassets */; };
 		5F9884631D7BF73F0041336F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F9884611D7BF73F0041336F /* LaunchScreen.storyboard */; };
 		5F98846B1D7BF8C10041336F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F98846A1D7BF8C10041336F /* GoogleService-Info.plist */; };
+		5FF7356B1D9AE9390007E8AC /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF7356A1D9AE9390007E8AC /* MainPageViewController.swift */; };
 		5FFC400D1D86A19F0055765F /* Instogrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC400C1D86A19F0055765F /* Instogrom.swift */; };
 		EFF8C25BC4F9FC187C19460F /* Pods_Instogrom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D067D5FCBB1AF3767E4168 /* Pods_Instogrom.framework */; };
 /* End PBXBuildFile section */
@@ -21,7 +22,7 @@
 /* Begin PBXFileReference section */
 		35BA8F3685247E7C32816400 /* Pods-Instogrom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instogrom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instogrom/Pods-Instogrom.release.xcconfig"; sourceTree = "<group>"; };
 		5F2BC0351D840B48007F442C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		5F7FFB1D1D7C006000D0B089 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5F7FFB1D1D7C006000D0B089 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5F9884551D7BF73F0041336F /* Instogrom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instogrom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F9884581D7BF73F0041336F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F98845D1D7BF73F0041336F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 		5F9884621D7BF73F0041336F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F9884641D7BF73F0041336F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F98846A1D7BF8C10041336F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5FF7356A1D9AE9390007E8AC /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		5FFC400C1D86A19F0055765F /* Instogrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instogrom.swift; sourceTree = "<group>"; };
 		76043EE7B365BBDBFF7C3A15 /* Pods-Instogrom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instogrom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instogrom/Pods-Instogrom.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D067D5FCBB1AF3767E4168 /* Pods_Instogrom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instogrom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				5F9884581D7BF73F0041336F /* AppDelegate.swift */,
-				5F7FFB1D1D7C006000D0B089 /* SignUpViewController.swift */,
+				5F7FFB1D1D7C006000D0B089 /* SignInViewController.swift */,
 				5F2BC0351D840B48007F442C /* RegisterViewController.swift */,
+				5FF7356A1D9AE9390007E8AC /* MainPageViewController.swift */,
 				5F98845C1D7BF73F0041336F /* Main.storyboard */,
 				5F98845F1D7BF73F0041336F /* Assets.xcassets */,
 				5F9884611D7BF73F0041336F /* LaunchScreen.storyboard */,
@@ -222,9 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF7356B1D9AE9390007E8AC /* MainPageViewController.swift in Sources */,
 				5FFC400D1D86A19F0055765F /* Instogrom.swift in Sources */,
 				5F2BC0361D840B48007F442C /* RegisterViewController.swift in Sources */,
-				5F7FFB1E1D7C006000D0B089 /* SignUpViewController.swift in Sources */,
+				5F7FFB1E1D7C006000D0B089 /* SignInViewController.swift in Sources */,
 				5F9884591D7BF73F0041336F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
